@@ -1,158 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CatalogWatcher Pro - Discord Bot</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fadeIn { animation: fadeIn 0.8s ease-out forwards; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ace Noctis: Cyberpunk FastAPI websites, AI Discord bots, and premium web solutions from Cairo. Hire me on Fiverr!">
+  <title>Ace Noctis - Neon Web & AI Agency</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #1a1a2e 0%, #0f1c3e 100%);
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    .neon-text {
+      text-shadow: 0 0 5px #00d4ff, 0 0 10px #ff00ff;
+      animation: neonPulse 2s infinite alternate;
+    }
+    @keyframes neonPulse {
+      0% { text-shadow: 0 0 5px #00d4ff; }
+      100% { text-shadow: 0 0 20px #ff00ff, 0 0 30px #00d4ff; }
+    }
+    .card {
+      background: rgba(26, 26, 46, 0.9);
+      border: 1px solid #00d4ff;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px #00d4ff;
+    }
+    .skill-bar {
+      height: 20px;
+      background: #2d2d44;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .skill-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #00d4ff, #ff00ff);
+      transition: width 1.5s ease-in-out;
+    }
+    .avatar {
+      background: url('https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/e133c46bc38298b03f0cce20775eafad-1755012748241/4a5eda94-fee8-4384-9e57-5ca4cfe14317.png') no-repeat center;
+      background-size: cover;
+      border-radius: 50%;
+      border: 2px solid #ff00ff;
+      animation: spin 4s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @media (min-width: 640px) {
+      .hero h1 { font-size: 4rem; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .grid { grid-template-columns: repeat(3, 1fr); }
+      .hero h1 { font-size: 5rem; }
+      .card { padding: 2rem; }
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
-    <header class="bg-indigo-600 py-6">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-2 animate-fadeIn">CatalogWatcher Pro</h1>
-            <p class="text-lg md:text-xl text-indigo-200 animate-fadeIn" style="animation-delay: 0.2s;">
-                Your Ultimate IMVU Product Tracking Discord Bot
-            </p>
+<body class="min-h-screen">
+  <!-- Hero Section -->
+  <header class="relative h-screen flex items-center justify-center text-center p-4 bg-[url('https://i.pinimg.com/videos/thumbnails/originals/71/40/d2/7140d258b9986e0626116285cdfb5a20.0000000.jpg')] bg-cover">
+    <div class="absolute inset-0 bg-black opacity-60"></div>
+    <div class="relative z-10">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold neon-text mb-4">Ace Noctis</h1>
+      <p class="text-lg sm:text-xl mb-6">Neon-Powered Custom Websites & AI Powered Discord Bots</p>
+      <div class="avatar w-24 h-24 mx-auto mb-4"></div>
+      <a href="https://www.fiverr.com/s/6YW4Wwb" target="_blank" class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-6 rounded-full inline-block transition-colors duration-300">Hire Me on Fiverr Now!</a>
+    </div>
+  </header>
+
+  <!-- Services Section -->
+  <section id="services" class="py-8 px-4">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center neon-text mb-8">Our Premium Services</h2>
+    <div class="grid gap-6 max-w-4xl mx-auto">
+      <div class="card p-4">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-2">Cyberpunk Web Development</h3>
+        <p>Build lightning-fast websites with FastAPI, featuring neon UI, responsive layouts, and seamless PostgreSQL integration. Perfect for portfolios, business sites, and landing pages that captivate.</p>
+        <p class="mt-2 text-teal-300">Example: A dynamic portfolio with animated hero and real-time data dashboards.</p>
+      </div>
+      <div class="card p-4">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-2">AI & Discord Bot Solutions</h3>
+        <p>Create custom Discord bots with AI moderation, engagement tools, and unique features like roast generators. Ideal for educational servers, gaming clans, and creative communities.</p>
+        <p class="mt-2 text-teal-300">Example: CatalogWatcher Pro with sentiment analysis and custom commands.</p>
+      </div>
+      <div class="card p-4">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-2">Design & Performance Optimization</h3>
+        <p>Elevate your site with SEO, speed optimization, and cyberpunk aesthetics using TailwindCSS. Get secure hosting and custom animations that turn heads.</p>
+        <p class="mt-2 text-teal-300">Example: A neon-lit landing page with smooth transitions and top-tier performance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-8 px-4 bg-gray-900">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center neon-text mb-8">Our Expertise</h2>
+    <div class="max-w-4xl mx-auto space-y-4">
+      <div class="flex flex-col sm:flex-row items-center justify-between">
+        <span class="text-lg sm:text-xl font-semibold">FastAPI Development</span>
+        <div class="w-full sm:w-3/4 mt-2 sm:mt-0">
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 90%;"></div>
+          </div>
         </div>
-    </header>
-
-    <section class="container mx-auto px-4 py-12">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-semibold mb-4 animate-fadeIn" style="animation-delay: 0.4s;">
-                What is CatalogWatcher Pro?
-            </h2>
-            <p class="text-lg text-gray-300 max-w-2xl mx-auto animate-fadeIn" style="animation-delay: 0.6s;">
-                CatalogWatcher Pro is a powerful Discord bot designed to track new product drops from your favorite IMVU creators. 
-                Built with a Python backend and Discord API, it delivers real-time notifications with a touch of humor, ensuring you never miss a new item!
-            </p>
+        <span class="text-lg sm:text-xl">90%</span>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between">
+        <span class="text-lg sm:text-xl font-semibold">Python Programming</span>
+        <div class="w-full sm:w-3/4 mt-2 sm:mt-0">
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 85%;"></div>
+          </div>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg animate-fadeIn" style="animation-delay: 0.8s;">
-                <h3 class="text-xl font-bold mb-4">Real-Time Tracking</h3>
-                <p class="text-gray-400">
-                    Monitors IMVU creator catalogs every 10 minutes to notify you instantly when new products are added.
-                </p>
-            </div>
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg animate-fadeIn" style="animation-delay: 1s;">
-                <h3 class="text-xl font-bold mb-4">Custom Alerts</h3>
-                <p class="text-gray-400">
-                    Configure notifications for specific creators, channels, or roles, and get direct messages for your favorite creators.
-                </p>
-            </div>
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg animate-fadeIn" style="animation-delay: 1.2s;">
-                <h3 class="text-xl font-bold mb-4">Meme-Powered</h3>
-                <p class="text-gray-400">
-                    Adds a fun twist with 100+ random jokes included in product updates, keeping your community entertained.
-                </p>
-            </div>
+        <span class="text-lg sm:text-xl">85%</span>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between">
+        <span class="text-lg sm:text-xl font-semibold">Discord Bot Creation</span>
+        <div class="w-full sm:w-3/4 mt-2 sm:mt-0">
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 80%;"></div>
+          </div>
         </div>
-    </section>
-
-    <section class="bg-gray-800 py-12">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-semibold text-center mb-8 animate-fadeIn" style="animation-delay: 1.4s;">
-                Key Features
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="flex items-start space-x-4 animate-fadeIn" style="animation-delay: 1.6s;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3562/3562750.png" alt="IMVU Icon" class="w-12 h-12">
-                    <div>
-                        <h3 class="text-xl font-bold">IMVU Catalog Scraping</h3>
-                        <p class="text-gray-400">
-                            Uses aiohttp and BeautifulSoup to scrape IMVU product pages, extracting details like price, status, and audience (GA/AP).
-                        </p>
-                    </div>
-                </div>
-                <div class="flex items-start space-x-4 animate-fadeIn" style="animation-delay: 1.8s;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="Discord Icon" class="w-12 h-12">
-                    <div>
-                        <h3 class="text-xl font-bold">Rich Discord Embeds</h3>
-                        <p class="text-gray-400">
-                            Sends visually appealing embeds with product images, prices, and a "Buy Now" button for quick purchases.
-                        </p>
-                    </div>
-                </div>
-                <div class="flex items-start space-x-4 animate-fadeIn" style="animation-delay: 2s;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968704.png" alt="Settings Icon" class="w-12 h-12">
-                    <div>
-                        <h3 class="text-xl font-bold">Flexible Configuration</h3>
-                        <p class="text-gray-400">
-                            Manage creators, channels, and roles with commands like <code>/add_creator</code>, <code>/set_notify_channel</code>, and more.
-                        </p>
-                    </div>
-                </div>
-                <div class="flex items-start space-x-4 animate-fadeIn" style="animation-delay: 2.2s;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Alert Icon" class="w-12 h-12">
-                    <div>
-                        <h3 class="text-xl font-bold">Personalized DM Alerts</h3>
-                        <p class="text-gray-400">
-                            Use <code>/watch_creator</code> to receive direct messages for new drops from your favorite creators.
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <span class="text-lg sm:text-xl">80%</span>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between">
+        <span class="text-lg sm:text-xl font-semibold">UI/UX Design</span>
+        <div class="w-full sm:w-3/4 mt-2 sm:mt-0">
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 75%;"></div>
+          </div>
         </div>
-    </section>
-
-    <section class="container mx-auto px-4 py-12">
-        <h2 class="text-3xl font-semibold text-center mb-8 animate-fadeIn" style="animation-delay: 2.4s;">
-            Bot Commands
-        </h2>
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-            <ul class="space-y-4 text-gray-300 animate-fadeIn" style="animation-delay: 2.6s;">
-                <li><code>/add_creator</code>: Add a creator to track with their IMVU catalog URL.</li>
-                <li><code>/remove_creator</code>: Stop tracking a creator.</li>
-                <li><code>/list_creators</code>: View all tracked creators.</li>
-                <li><code>/check_now</code>: Force an immediate product scan.</li>
-                <li><code>/set_notify_channel</code>: Set the default channel for notifications.</li>
-                <li><code>/watch_creator</code>: Get DMs for a creator's new drops.</li>
-                <li><code>/drop_stats</code>: See how many drops a creator has logged.</li>
-                <li><code>/help</code>: View all available commands.</li>
-            </ul>
+        <span class="text-lg sm:text-xl">75%</span>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between">
+        <span class="text-lg sm:text-xl font-semibold">SEO & Performance</span>
+        <div class="w-full sm:w-3/4 mt-2 sm:mt-0">
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 70%;"></div>
+          </div>
         </div>
-    </section>
+        <span class="text-lg sm:text-xl">70%</span>
+      </div>
+    </div>
+  </section>
 
-    <section class="bg-indigo-600 py-12">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-semibold mb-4 animate-fadeIn" style="animation-delay: 2.8s;">
-                Get Started
-            </h2>
-            <p class="text-lg text-indigo-200 mb-6 animate-fadeIn" style="animation-delay: 3s;">
-                Invite CatalogWatcher Pro to your Discord server and start tracking IMVU creators today!
-            </p>
-            <a href="https://discord.com/api/oauth2/authorize?client_id=1387764414404493312&permissions=268438528&scope=bot%20applications.commands" class="inline-block bg-white text-indigo-600 font-semibold py-3 px-6 rounded-lg hover:bg-indigo-100 transition animate-fadeIn" style="animation-delay: 3.2s;">
-                Add to Discord
-            </a>
-        </div>
-    </section>
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-8 px-4">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center neon-text mb-8">Pricing Plans</h2>
+    <div class="grid gap-6 max-w-4xl mx-auto">
+      <div class="card p-4">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-2">Neon Starter</h3>
+        <p class="mb-2 text-2xl">$80</p>
+        <ul class="list-disc list-inside mb-4">
+          <li>1 responsive page with neon UI</li>
+          <li>Basic SEO & speed optimization</li>
+          <li>1 API integration</li>
+          <li>Netlify deployment with guide</li>
+        </ul>
+        <button class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2 px-4 rounded-full w-full transition-colors duration-300" onclick="alert('Order on Fiverr: https://www.fiverr.com/s/6YW4Wwb')">Get Started</button>
+      </div>
+      <div class="card p-4">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-2">Neon Pro</h3>
+        <p class="mb-2 text-2xl">$120</p>
+        <ul class="list-disc list-inside mb-4">
+          <li>Up to 3 pages with animations</li>
+          <li>Enhanced SEO & performance</li>
+          <li>Database integration</li>
+          <li>Detailed deployment guide</li>
+        </ul>
+        <button class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2 px-4 rounded-full w-full transition-colors duration-300" onclick="alert('Order on Fiverr: https://www.fiverr.com/s/6YW4Wwb')">Upgrade Now</button>
+      </div>
+      <div class="card p-4">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-2">Ultimate Neon</h3>
+        <p class="mb-2 text-2xl">$200</p>
+        <ul class="list-disc list-inside mb-4">
+          <li>Up to 5 pages with advanced UI</li>
+          <li>Full SEO, speed, & security</li>
+          <li>Complex API/database</li>
+          <li>1-hour video consultation</li>
+        </ul>
+        <button class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2 px-4 rounded-full w-full transition-colors duration-300" onclick="alert('Order on Fiverr: https://www.fiverr.com/s/6YW4Wwb')">Go Premium</button>
+      </div>
+    </div>
+  </section>
 
-    <footer class="bg-gray-900 py-6 text-center">
-        <p class="text-gray-400">Developed with ❤️ for the IMVU community | Hosted on GitHub</p>
-    </footer>
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-8 px-4 bg-gray-900">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center neon-text mb-8">What Clients Say</h2>
+    <div class="max-w-4xl mx-auto space-y-6">
+      <div class="card p-4">
+        <p class="italic">"Ace turned my dull portfolio into a neon masterpiece! Fast delivery and top-notch code."</p>
+        <p class="mt-2 text-right text-teal-300">- Ahmed, Freelancer</p>
+      </div>
+      <div class="card p-4">
+        <p class="italic">"The Discord bot exceeded expectations—AI moderation saved our server! Highly recommend."</p>
+        <p class="mt-2 text-right text-teal-300">- Sara, Gaming Clan Leader</p>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // GSAP animations for smooth scrolling effects
-        gsap.utils.toArray('.animate-fadeIn').forEach((element, index) => {
-            gsap.from(element, {
-                opacity: 0,
-                y: 20,
-                duration: 0.8,
-                delay: index * 0.2,
-                scrollTrigger: {
-                    trigger: element,
-                    start: 'top 80%',
-                }
-            });
-        });
-    </script>
+  <!-- About Section -->
+  <section id="about" class="py-8 px-4">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center neon-text mb-8">Why Choose Ace Noctis?</h2>
+    <div class="max-w-3xl mx-auto text-center space-y-4">
+      <p>Based in Cairo, I blend Egyptian creativity with global tech expertise. With FastAPI, Python, and a passion for cyberpunk design, I deliver projects that stand out. My memeslord edge and bilingual skills (Arabic/English) ensure a fun, seamless experience.</p>
+      <p>From neon websites to AI-powered bots, I’ve helped clients worldwide shine in the digital realm. Let’s craft your next big thing!</p>
+    </div>
+  </section>
+
+  <!-- Contact & Social Section -->
+  <section id="contact" class="py-8 px-4 bg-gray-900">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center neon-text mb-8">Get in Touch</h2>
+    <div class="text-center space-y-4">
+      <p>Ready to launch your project? Let’s connect!</p>
+      <a href="https://www.fiverr.com/s/6YW4Wwb" target="_blank" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-full inline-block transition-colors duration-300">Contact on Fiverr</a>
+      <div class="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4 mt-4">
+        <a href="https://x.com/7odaCody43024" target="_blank" class="text-teal-300 hover:text-teal-400">X: @7odaCody43024</a>
+        <a href="https://discord.com/users/ace66699" target="_blank" class="text-pink-300 hover:text-pink-400">Discord: ace66699</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 text-center text-gray-400">
+    <p>&copy; 2025 Ace Noctis. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-fadeIn');
+            }
+          });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.card').forEach(card => observer.observe(card));
+      }
+    });
+  </script>
+  <style>
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </body>
 </html>
