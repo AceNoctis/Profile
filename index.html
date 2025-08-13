@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ace Noctis: Cyberpunk FastAPI websites, AI Discord bots, and premium web solutions from Cairo. Hire me on Fiverr!">
-  <title>Ace Noctis - Neon Web & AI Agency</title>
+  <meta name="description" content="Ace Noctis: Cyberpunk FastAPI websites, AI Discord bots, and marketing solutions from Cairo. Hire me on Fiverr!">
+  <title>Ace Noctis - Premier Neon Web & AI Agency</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
   <style>
     body {
       background: linear-gradient(135deg, #1a1a2e 0%, #0f1c3e 100%);
@@ -15,6 +18,7 @@
       margin: 0;
       padding: 0;
       line-height: 1.6;
+      overflow-x: hidden;
     }
     .neon-text {
       text-shadow: 0 0 5px #00d4ff, 0 0 10px #ff00ff;
@@ -26,19 +30,21 @@
     }
     .card {
       background: rgba(26, 26, 46, 0.9);
-      border: 1px solid #00d4ff;
-      border-radius: 10px;
+      border: 2px solid #00d4ff;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px #00d4ff;
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px #00d4ff;
     }
     .skill-bar {
       height: 20px;
       background: #2d2d44;
       border-radius: 10px;
       overflow: hidden;
+      border: 1px solid #ff00ff;
     }
     .skill-fill {
       height: 100%;
@@ -49,12 +55,29 @@
       background: url('https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/e133c46bc38298b03f0cce20775eafad-1755012748241/4a5eda94-fee8-4384-9e57-5ca4cfe14317.png') no-repeat center;
       background-size: cover;
       border-radius: 50%;
-      border: 2px solid #ff00ff;
+      border: 3px solid #ff00ff;
+      box-shadow: 0 0 10px #ff00ff;
       animation: spin 4s linear infinite;
     }
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
+    }
+    .header-pulse {
+      animation: pulse 3s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
     @media (min-width: 640px) {
       .hero h1 { font-size: 4rem; }
@@ -63,49 +86,69 @@
     @media (min-width: 1024px) {
       .grid { grid-template-columns: repeat(3, 1fr); }
       .hero h1 { font-size: 5rem; }
-      .card { padding: 2rem; }
+      .card { padding: 2.5rem; }
     }
   </style>
 </head>
-<body class="min-h-screen">
-  <!-- Hero Section -->
-  <header class="relative h-screen flex items-center justify-center text-center p-4 bg-[url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXM2ZHN3azBkdW94N2NjOGMwamI2NXVscWs3dGRlMG9hYzQ2NHN1MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/10ppffwhOftLy0/giphy.gif')] bg-cover bg-center">
+<body class="min-h-screen relative">
+  <div id="particles-js"></div>
+  <script>
+    particlesJS({
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#00d4ff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5, random: true },
+        size: { value: 3, random: true },
+        line_linked: { enable: false },
+        move: { enable: true, speed: 2, direction: "none", random: true }
+      },
+      interactivity: { detectsOn: "canvas", events: { onhover: { enable: true, mode: "repulse" } } }
+    });
+  </script>
 
+  <!-- Hero Section -->
+  <header class="relative h-screen flex items-center justify-center text-center p-4 bg-[url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXM2ZHN3azBkdW94N2NjOGMwamI2NXVscWs3dGRlMG9hYzQ2NHN1MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/10ppffwhOftLy0/giphy.gif')] bg-cover bg-center header-pulse">
     <div class="absolute inset-0 bg-black opacity-60"></div>
     <div class="relative z-10">
       <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold neon-text mb-4">Ace Noctis</h1>
       <p class="text-lg sm:text-xl mb-6">Neon-Powered Custom Web & AI Powered Discord Bots</p>
       <div class="avatar w-24 h-24 mx-auto mb-4"></div>
-      <a href="https://www.fiverr.com/s/6YW4Wwb" target="_blank" class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-6 rounded-full inline-block transition-colors duration-300">Hire Me on Fiverr Now!</a>
+      <a href="https://www.fiverr.com/s/6YW4Wwb" target="_blank" class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-6 rounded-full inline-block transition-colors duration-300 border-2 border-transparent hover:border-teal-400">Hire Me on Fiverr Now!</a>
     </div>
   </header>
 
   <!-- Services Section -->
-  <section id="services" class="py-8 px-4">
-    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center neon-text mb-8">Our Premium Services</h2>
-    <div class="grid gap-6 max-w-4xl mx-auto">
-      <div class="card p-4">
-        <h3 class="text-xl sm:text-2xl font-semibold mb-2">Cyberpunk Web Development</h3>
-        <p>Build lightning-fast websites with FastAPI, featuring neon UI, responsive layouts, and seamless PostgreSQL integration. Perfect for portfolios, business sites, and landing pages that captivate.</p>
-        <p class="mt-2 text-teal-300">Example: A dynamic portfolio with animated hero and real-time data dashboards.</p>
+  <section id="services" class="py-12 px-4">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center neon-text mb-10">Our Elite Services</h2>
+    <div class="grid gap-8 max-w-5xl mx-auto">
+      <div class="card p-6">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-3">Cyberpunk Web Development</h3>
+        <p>Transform your online presence with lightning-fast FastAPI websites, featuring neon UI, responsive layouts, and PostgreSQL integration. Ideal for portfolios, e-commerce, and landing pages that convert.</p>
+        <p class="mt-3 text-teal-300">Highlight: Dynamic portfolio with animated hero and real-time dashboards.</p>
       </div>
-      <div class="card p-4">
-        <h3 class="text-xl sm:text-2xl font-semibold mb-2">AI & Discord Bot Solutions</h3>
-        <p>Create custom Discord bots with AI moderation, engagement tools, and unique features like roast generators. Ideal for educational servers, gaming clans, and creative communities.</p>
-        <p class="mt-2 text-teal-300">Example: CatalogWatcher Pro with sentiment analysis and custom commands.</p>
+      <div class="card p-6">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-3">AI & Discord Bot Solutions</h3>
+        <p>Develop custom Discord bots with AI-driven features like moderation, engagement tools, and roast generators. Perfect for gaming clans, educational servers, and community management.</p>
+        <p class="mt-3 text-teal-300">Flagship: <a href="https://acenoctis.github.io/CatalogWatcherPro/" target="_blank" class="underline hover:text-pink-300">CatalogWatcher Pro</a> - IMVU tracking with humor.</p>
       </div>
-      <div class="card p-4">
-        <h3 class="text-xl sm:text-2xl font-semibold mb-2">Design & Performance Optimization</h3>
-        <p>Elevate your site with SEO, speed optimization, and cyberpunk aesthetics using TailwindCSS. Get secure hosting and custom animations that turn heads.</p>
-        <p class="mt-2 text-teal-300">Example: A neon-lit landing page with smooth transitions and top-tier performance.</p>
+      <div class="card p-6">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-3">Design & Performance Optimization</h3>
+        <p>Boost your site with SEO, speed optimization, and cyberpunk aesthetics using TailwindCSS. Includes secure hosting and animations that captivate audiences.</p>
+        <p class="mt-3 text-teal-300">Showcase: Neon-lit landing page with seamless transitions.</p>
+      </div>
+      <div class="card p-6">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-3">Custom Logic & Marketing</h3>
+        <p>Craft tailored logic for bots and websites, plus marketing strategies to skyrocket your brand. From targeted campaigns to automation scripts, we’ve got your growth covered.</p>
+        <p class="mt-3 text-teal-300">Example: Automated marketing funnels with bot-driven promotions.</p>
       </div>
     </div>
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="py-8 px-4 bg-gray-900">
-    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center neon-text mb-8">Our Expertise</h2>
-    <div class="max-w-4xl mx-auto space-y-4">
+  <section id="skills" class="py-12 px-4 bg-gray-900">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center neon-text mb-10">Our Mastery Unleashed</h2>
+    <div class="max-w-5xl mx-auto space-y-6">
       <div class="flex flex-col sm:flex-row items-center justify-between">
         <span class="text-lg sm:text-xl font-semibold">FastAPI Development</span>
         <div class="w-full sm:w-3/4 mt-2 sm:mt-0">
@@ -151,91 +194,140 @@
         </div>
         <span class="text-lg sm:text-xl">70%</span>
       </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between">
+        <span class="text-lg sm:text-xl font-semibold">Marketing Strategies</span>
+        <div class="w-full sm:w-3/4 mt-2 sm:mt-0">
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 65%;"></div>
+          </div>
+        </div>
+        <span class="text-lg sm:text-xl">65%</span>
+      </div>
     </div>
   </section>
-
-  <!-- Pricing Section -->
-  <section id="pricing" class="py-8 px-4">
-    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center neon-text mb-8">Pricing Plans</h2>
-    <div class="grid gap-6 max-w-4xl mx-auto">
-      <div class="card p-4">
-        <h3 class="text-xl sm:text-2xl font-semibold mb-2">Neon Starter</h3>
+<!-- Pricing Section -->
+  <section id="pricing" class="py-12 px-4">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center neon-text mb-10">Our Competitive Pricing</h2>
+    <div class="grid gap-8 max-w-5xl mx-auto">
+      <div class="card p-6">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-3">Neon Starter Web</h3>
         <p class="mb-2 text-2xl">$80</p>
-        <ul class="list-disc list-inside mb-4">
+        <ul class="list-disc list-inside mb-5">
           <li>1 responsive page with neon UI</li>
           <li>Basic SEO & speed optimization</li>
           <li>1 API integration</li>
           <li>Netlify deployment with guide</li>
         </ul>
-        <button class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2 px-4 rounded-full w-full transition-colors duration-300" onclick="alert('Order on Fiverr: https://www.fiverr.com/s/6YW4Wwb')">Get Started</button>
+        <a href="https://www.fiverr.com/s/5rExW0k" target="_blank" class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-6 rounded-full w-full block text-center transition-colors duration-300 border-2 border-transparent hover:border-teal-400">Get Started</a>
       </div>
-      <div class="card p-4">
-        <h3 class="text-xl sm:text-2xl font-semibold mb-2">Neon Pro</h3>
+      <div class="card p-6">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-3">Neon Pro Web</h3>
         <p class="mb-2 text-2xl">$120</p>
-        <ul class="list-disc list-inside mb-4">
+        <ul class="list-disc list-inside mb-5">
           <li>Up to 3 pages with animations</li>
           <li>Enhanced SEO & performance</li>
           <li>Database integration</li>
           <li>Detailed deployment guide</li>
         </ul>
-        <button class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2 px-4 rounded-full w-full transition-colors duration-300" onclick="alert('Order on Fiverr: https://www.fiverr.com/s/6YW4Wwb')">Upgrade Now</button>
+        <a href="https://www.fiverr.com/s/5rExW0k" target="_blank" class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-6 rounded-full w-full block text-center transition-colors duration-300 border-2 border-transparent hover:border-teal-400">Upgrade Now</a>
       </div>
-      <div class="card p-4">
-        <h3 class="text-xl sm:text-2xl font-semibold mb-2">Ultimate Neon</h3>
+      <div class="card p-6">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-3">Ultimate Neon Web</h3>
         <p class="mb-2 text-2xl">$200</p>
-        <ul class="list-disc list-inside mb-4">
+        <ul class="list-disc list-inside mb-5">
           <li>Up to 5 pages with advanced UI</li>
           <li>Full SEO, speed, & security</li>
           <li>Complex API/database</li>
           <li>1-hour video consultation</li>
         </ul>
-        <button class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2 px-4 rounded-full w-full transition-colors duration-300" onclick="alert('Order on Fiverr: https://www.fiverr.com/s/6YW4Wwb')">Go Premium</button>
+        <a href="https://www.fiverr.com/s/5rExW0k" target="_blank" class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-6 rounded-full w-full block text-center transition-colors duration-300 border-2 border-transparent hover:border-teal-400">Go Premium</a>
+      </div>
+      <div class="card p-6">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-3">Bot Starter Pack</h3>
+        <p class="mb-2 text-2xl">$100</p>
+        <ul class="list-disc list-inside mb-5">
+          <li>Basic Discord bot with 5 commands</li>
+          <li>Simple logic (e.g., greetings)</li>
+          <li>Basic moderation</li>
+          <li>Deployment setup</li>
+        </ul>
+        <a href="https://www.fiverr.com/s/5rExW0k" target="_blank" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-full w-full block text-center transition-colors duration-300 border-2 border-transparent hover:border-pink-400">Contact Me on Fiverr</a>
+      </div>
+      <div class="card p-6">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-3">Bot Pro Pack</h3>
+        <p class="mb-2 text-2xl">$150</p>
+        <ul class="list-disc list-inside mb-5">
+          <li>Up to 10 commands with AI logic</li>
+          <li>Custom features (e.g., IMVU tracking)</li>
+          <li>Advanced moderation</li>
+          <li>Detailed setup guide</li>
+        </ul>
+        <a href="https://www.fiverr.com/s/5rExW0k" target="_blank" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-full w-full block text-center transition-colors duration-300 border-2 border-transparent hover:border-pink-400">Contact Me on Fiverr</a>
+      </div>
+      <div class="card p-6">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-3">Marketing & Custom Logic</h3>
+        <p class="mb-2 text-2xl">$250</p>
+        <ul class="list-disc list-inside mb-5">
+          <li>Custom bot logic or website scripts</li>
+          <li>Marketing campaign setup</li>
+          <li>Analytics integration</li>
+          <li>2-hour consultation</li>
+        </ul>
+        <a href="https://www.fiverr.com/s/5rExW0k" target="_blank" class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-6 rounded-full w-full block text-center transition-colors duration-300 border-2 border-transparent hover:border-purple-400">Get Strategy</a>
       </div>
     </div>
   </section>
 
   <!-- Testimonials Section -->
-  <section id="testimonials" class="py-8 px-4 bg-gray-900">
-    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center neon-text mb-8">What Clients Say</h2>
-    <div class="max-w-4xl mx-auto space-y-6">
-      <div class="card p-4">
+  <section id="testimonials" class="py-12 px-4 bg-gray-900">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center neon-text mb-10">Client Success Stories</h2>
+    <div class="max-w-5xl mx-auto space-y-8">
+      <div class="card p-6">
         <p class="italic">"Ace turned my dull portfolio into a neon masterpiece! Fast delivery and top-notch code."</p>
-        <p class="mt-2 text-right text-teal-300">- Ahmed, Freelancer</p>
+        <p class="mt-3 text-right text-teal-300">- Ahmed, Freelancer</p>
       </div>
-      <div class="card p-4">
+      <div class="card p-6">
         <p class="italic">"The Discord bot exceeded expectations—AI moderation saved our server! Highly recommend."</p>
-        <p class="mt-2 text-right text-teal-300">- Sara, Gaming Clan Leader</p>
+        <p class="mt-3 text-right text-teal-300">- Sara, Gaming Clan Leader</p>
       </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-8 px-4">
-    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center neon-text mb-8">Why Choose Ace Noctis?</h2>
-    <div class="max-w-3xl mx-auto text-center space-y-4">
-      <p>Based in Cairo, I blend Egyptian creativity with global tech expertise. With FastAPI, Python, and a passion for cyberpunk design, I deliver projects that stand out. My memeslord edge and bilingual skills (Arabic/English) ensure a fun, seamless experience.</p>
-      <p>From neon websites to AI-powered bots, I’ve helped clients worldwide shine in the digital realm. Let’s craft your next big thing!</p>
+  <section id="about" class="py-12 px-4">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center neon-text mb-10">Get to know Ace Noctis</h2>
+    <div class="max-w-3xl mx-auto text-center space-y-6">
+      <div class="card p-6 bg-gray-800 bg-opacity-90 border-2 border-teal-400 rounded-xl shadow-lg hover:shadow-xl hover:border-pink-400 transition-all duration-300">
+        <p class="text-lg sm:text-xl font-semibold text-teal-300 flex items-center justify-center gap-2"><i class="fas fa-code"></i> Crafting Neon Code, AI Powered Magic!</p>
+        <p class="text-md sm:text-lg flex items-center justify-center gap-2"><i class="fas fa-map-marker-alt"></i>  From Egypt</p>
+        <p class="text-md sm:text-lg flex items-center justify-center gap-2"><i class="fas fa-calendar-alt"></i>  Member since Apr 2016</p>
+        <p class="text-md sm:text-lg flex items-center justify-center gap-2"><i class="fas fa-clock"></i> Avg. response time 12 hours</p>
+        <p class="text-md sm:text-lg flex items-center justify-center gap-2"><i class="fas fa-language"></i>  Languages</p>
+        <p class="text-md sm:text-lg flex items-center justify-center gap-2"><i class="fas fa-globe"></i> English, Arabic</p>
+        <p class="text-base sm:text-lg leading-relaxed">Hey, I'm Ace Noctis, a chill Egyptian web developer and prompt engineer from Cairo. I build fast, clean websites, slick Discord bots (like CatalogWatcher Pro), and creative AI-driven projects (think roast generators with 😏 vibes). Fluent in Arabic and English, I specialize in FastAPI, Python, and cyberpunk-inspired designs. Need a vibrant site, AI solution, or meme-fueled app? I keep it simple, deliver quality, and add a neon glow to every project. Let’s create something epic together!</p>
+      </div>
     </div>
   </section>
-
-  <!-- Contact & Social Section -->
-  <section id="contact" class="py-8 px-4 bg-gray-900">
-    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center neon-text mb-8">Get in Touch</h2>
-    <div class="text-center space-y-4">
-      <p>Ready to launch your project? Let’s connect!</p>
-      <a href="https://www.fiverr.com/s/6YW4Wwb" target="_blank" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-full inline-block transition-colors duration-300">Contact on Fiverr</a>
-      <div class="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4 mt-4">
-        <a href="https://x.com/7odaCody43024" target="_blank" class="text-teal-300 hover:text-teal-400">X: @7odaCody43024</a>
-        <a href="https://discord.com/users/ace66699" target="_blank" class="text-pink-300 hover:text-pink-400">Discord: ace66699</a>
+<!-- Contact & Social Section -->
+  <section id="contact" class="py-12 px-4 bg-gray-900">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center neon-text mb-10">Connect With Me!</h2>
+    <div class="text-center space-y-6">
+      <p class="text-lg sm:text-xl">Ready to elevate your digital presence? Let’s collaborate</p>
+      <a href="https://www.fiverr.com/s/6YW4Wwb" target="_blank" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-8 rounded-full inline-block transition-all duration-300 border-2 border-transparent hover:border-pink-400 hover:shadow-lg hover:shadow-pink-500/50">Hire Me on Fiverr Now</a>
+      <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mt-6">
+        <a href="https://x.com/7odaCody43024" target="_blank" class="text-teal-300 hover:text-teal-400 flex items-center gap-2 transition-colors duration-300"><i class="fab fa-x-twitter"></i> Follow on X</a>
+        <a href="https://discord.com/users/ace66699" target="_blank" class="text-pink-300 hover:text-pink-400 flex items-center gap-2 transition-colors duration-300"><i class="fab fa-discord"></i> Join on Discord</a>
+        <a href="https://acenoctis.github.io/CatalogWatcherPro/" target="_blank" class="text-purple-300 hover:text-purple-400 flex items-center gap-2 transition-colors duration-300"><i class="fas fa-robot"></i> Explore CatalogWatcher Pro</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="py-4 text-center text-gray-400">
-    <p>&copy; 2025 Ace Noctis. All rights reserved.</p>
+  <!-- Footer Section -->
+  <footer class="py-6 px-4 bg-gray-950 text-center text-gray-400 border-t-2 border-teal-400">
+    <p class="text-sm sm:text-base">&copy; 2025 Ace Noctis. All rights reserved. | <a href="https://acenoctis.github.io/CatalogWatcherPro/" target="_blank" class="text-teal-300 hover:text-teal-400 underline">CatalogWatcher Pro</a> | Designed with <i class="fas fa-heart text-pink-500"></i> from Cairo</p>
   </footer>
 
+  <!-- JavaScript for Animations -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       if ('IntersectionObserver' in window) {
@@ -259,5 +351,3 @@
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
-</body>
-</html>
